@@ -66,3 +66,26 @@ let setResult = () => {
         finalResult.textContent = "You finally WIN !"
     }
 }
+
+playBtn.addEventListener('click', () => {
+    let i = 0
+    while (i < 5) {
+        let playerSelection = prompt('Choose 1 for Rock, 2 for Paper or 3 for Scissors')
+        if (playerSelection == 1) {
+            playerSelection = 'rock'
+            playRound (playerSelection, computerResult ())
+        } else if (playerSelection == 2) {
+            playerSelection = 'paper'
+            playRound (playerSelection, computerResult ())
+        } else if (playerSelection == 3) {
+            playerSelection = 'scissor'
+            playRound (playerSelection, computerResult ())
+        } else {
+            gameStatus.textContent = `You picked and invalid option, pick only between 1, 2, or 3 `
+        }
+
+        i ++
+    }
+
+    setResult ()
+})
