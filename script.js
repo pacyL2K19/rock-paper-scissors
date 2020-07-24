@@ -9,7 +9,7 @@ let computerResult = 0;
 let playBtn = document.getElementById('play-btn');
 let playerResultDisplay = document.getElementById('playerResult');
 let computerResultDisplay = document.getElementById('computerResult');
-let finalResult = document.getElementById('pfinalResult');
+let finalResult = document.getElementById('finalResult');
 let gameStatus = document.getElementById('game-status')
 
 let computerPlay = () => {
@@ -65,13 +65,16 @@ let setResult = () => {
     } else {
         finalResult.textContent = "You finally WIN !"
     }
+
+    // computerResultDisplay.textContent = "";
+    // playerResultDisplay.textContent = "";
 }
 
 playBtn.addEventListener('click', () => {
     let i = 0
     while (i < 5) {
         let playerSelection = prompt('Choose 1 for Rock, 2 for Paper or 3 for Scissors')
-        console.log(playerSelection)
+        // console.log(playerSelection)
         if (playerSelection == 1) {
             playerSelection = 'rock'
             playRound (playerSelection, computerPlay ())
