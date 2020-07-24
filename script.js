@@ -3,12 +3,12 @@
  */
 
 const options = ['rock', 'paper', 'scissors'];
-let scoreOfPlayer = 0;
-let scoreOfComputer = 0;
+let playerResult = 0;
+let computerResult = 0;
 // DOM elements
 let playBtn = document.getElementById('play-btn');
-let playerResult = document.getElementById('playerResult');
-let computerResult = document.getElementById('computerResult');
+let playerResultDisplay = document.getElementById('playerResult');
+let computerResultDisplay = document.getElementById('computerResult');
 let finalResult = document.getElementById('pfinalResult');
 let gameStatus = document.getElementById('game-status')
 
@@ -52,5 +52,17 @@ let playRound = (playerSelection, computerSelection) => {
             computerResult ++;
             gameStatus.textContent = `Your opponent picked ${computerSelection}; you LOOSE : scissors beats paper`
         }
+    }
+}
+
+let setResult = () => {
+    playerResultDisplay.textContent = `Your Score is : ${playerResult}`;
+    computerResultDisplay.textContent = `Your opponnent's result is ${computerResult}`
+    if (computerResult > playerResult) {
+        finalResult.textContent = `You finally LOOSE !`
+    } else if (computerResult == playerResult) {
+        finalResult.textContent = `It's a DRAW !`
+    } else {
+        finalResult.textContent = "You finally WIN !"
     }
 }
